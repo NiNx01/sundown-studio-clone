@@ -706,7 +706,15 @@ body {
 }
 
 @media screen  and (max-width : 480px){
-
+  .top-nav-wrapper {
+    
+    padding: 2em 1.25em 0em 1.25em;
+    
+  }
+  .container {
+    
+    padding: 0 1.25em;
+  }
   .hero {
     margin-top: 5.875em 
   }
