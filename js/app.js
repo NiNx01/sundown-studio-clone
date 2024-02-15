@@ -72,3 +72,24 @@ checkScreenSize(screenSize) ;
 screenSize.addEventListener("change" , ()=>{
   checkScreenSize(screenSize) ;
 })
+
+
+const servicesLinks = document.querySelectorAll(".services-link") ;
+const servicesContentText = document.querySelector(".services-content-text") ;
+const servicesImg = document.querySelector(".services-img") ;
+
+servicesLinks.forEach(serviceLink => {
+  serviceLink.addEventListener("click" , e=>{
+    e.preventDefault() ;
+    let serviceText = e.target.dataset.serviceText ;
+    let serviceImg = e.target.dataset.serviceImg ;
+    let currentActive = document.querySelector(".services-link-active") ;
+
+    currentActive.classList.remove("services-link-active") ;
+    e.target.classList.add("services-link-active")
+
+    servicesContentText.textContent = serviceText ;
+    servicesImg.src = serviceImg ;
+
+  })
+});
