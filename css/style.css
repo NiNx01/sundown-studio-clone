@@ -541,6 +541,7 @@ body {
 
 .hero-shapes-wrapper {
   overflow: hidden;
+  z-index: -10;
   /* border: 2px solid blue; */
   width: 100vw;
  min-height: 200vh;
@@ -558,6 +559,7 @@ body {
   width: 100vw;
   top: 0;
   overflow-x: clip;
+  z-index: -10;
 }
 
 @media screen  and (max-width : 992px){
