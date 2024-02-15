@@ -3,6 +3,14 @@
 //     smooth: true
 // });
 
+// This is to avoid refreshing
+const aTags = document.querySelectorAll("a") ;
+aTags.forEach(aTag => {
+  aTag.addEventListener("click" , e=>{
+    e.preventDefault() ;
+  })
+})
+
 function checkScreenSize(screenSize){
   if(screenSize.matches) {
     const featuredLinks = document.querySelectorAll(".featured-link");
@@ -93,3 +101,42 @@ servicesLinks.forEach(serviceLink => {
 
   })
 });
+
+
+const pageCover = document.querySelector("#page-cover") ;
+const pageCoverText = document.querySelector(".page-cover-text") ;
+
+const pageBody = document.querySelector("body" ) ;
+
+const changeTextTimeout = (text)=>{
+  return new Promise((resolve,reject) => {
+    setTimeout(()=>{
+      pageCoverText.textContent = text ;
+      resolve() ;
+    } , 1000) ;
+  }) ;
+}
+
+const pageAnimation = ()=>{
+  return new Promise((resolve,reject) => {
+    pageCover.classList.add("page-cover-animation") ;
+    resolve() ;
+  }) ;
+}
+
+async function changeText() {
+  await changeTextTimeout("Environments") ;
+  await changeTextTimeout("Experiences") ;
+  await changeTextTimeout("Content") ;
+  await changeTextTimeout("") ;
+ 
+  await pageAnimation() ;
+  
+  pageBody.classList.remove("hide-body") ;
+
+}
+
+
+document.addEventListener("DOMContentLoaded" , e=>{
+    changeText() ;
+})

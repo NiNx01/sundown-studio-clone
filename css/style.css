@@ -26,8 +26,12 @@ body {
   font-family: neuehaasmedium, system-ui;
   font-size: calc(0.5357142857142858vw + 0.5178571428571429em);
   overflow-x: hidden;
+ 
 }
 
+.hide-body {
+  overflow: hidden;
+}
 
 .container {
   width: 100%;
@@ -639,12 +643,64 @@ body {
   object-fit: cover;
 }
 
+#page-cover {
+ position: fixed;
+ inset: 0;
+ background-color: rgb(0, 0, 0);
+ z-index: 9999;
+ /* pointer-events: none; */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ user-select: none;
+  
+}
+
+.page-cover-text {
+  font-size: 4em;
+  font-weight: 500;
+  line-height: 1;
+  background-image: linear-gradient(
+    200deg,
+#fe330a,
+#ff9831);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-cover-animation {
+  animation: pageCover 500ms ease-in-out  forwards;
+}
+
+@keyframes pageCover {
+  0%{
+    transform: translateY(0);
+  }
+  
+  90%{
+    transform: translateY(-100%);
+    
+  }
+
+  100%{
+    transform: translateY(-100%);
+    display: none;
+  }
+
+}
+
+
 
 /* Media queries  */
 
 /* 992  */
 @media screen  and (max-width : 992px){
 
+  .page-cover-text {
+    font-size: 2.75;
+  }
   .all-projects-btn {
     margin-top: 1em;
     
@@ -720,6 +776,9 @@ body {
 
 /* 800 */
 @media screen  and (max-width : 800px){
+  .page-cover-text {
+    font-size: 2.25;
+  }
   .hero {
     flex-direction: column-reverse;
     align-items: stretch;
