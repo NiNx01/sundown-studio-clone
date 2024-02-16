@@ -543,9 +543,10 @@ body {
 
 .nav-icon > span {
   display: block;
-  height: 2px;
+  height: 1px;
   width: 1.25rem;
   background-color: rgba(11, 5, 0, 0.67);
+  transition: transform 250ms ease-in-out;
 }
 
 .nav-link:hover .nav-icon > span {
@@ -902,6 +903,7 @@ footer {
 
 #main-wrapper {
   background-color: #efeae3;
+  width: 100vw;
   isolation: isolate;
   /* border: 1px solid blue; */
   overflow: hidden;
@@ -1092,12 +1094,24 @@ footer {
     padding-right: 2rem;
 }
 
+
+.spin-top {
+  transform: 
+  translateY(0.175rem)
+  rotate(45deg);
+}
+
+.spin-bottom {
+  transform: 
+  translateY(-0.175rem)
+  rotate(-45deg);
+}
 /* Media queries  */
 
 /* 992  */
 @media screen  and (max-width : 992px){
   .empty-space {
-    height: 95vh;
+    height: 95svh;
     
   }
   
@@ -1199,7 +1213,7 @@ footer {
 @media screen  and (max-width : 800px){
 
   .empty-space {
-    height: 90vh;
+    height: 90svh;
     
   }
   .page-cover-text {
@@ -1278,7 +1292,7 @@ footer {
   }
 
   .dropdown-hidden{
-    transform: translateY(-100%);
+    transform: translateY(-120%);
   }
   
 
@@ -1450,6 +1464,10 @@ footer {
 
   .swiper {
     padding: 0 1.25rem;
+  }
+
+  .dropdown-link {
+    font-size: 3em;
   }
 
 }

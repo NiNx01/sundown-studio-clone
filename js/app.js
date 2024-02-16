@@ -7,8 +7,13 @@
 const hamburger = document.querySelector("#nav-hamburger") ;
 const dropdown = document.querySelector(".dropdown") ;
 
+const navIconBarTop = document.querySelector(".nav-icon-bar-top") ;
+const navIconBarBottom = document.querySelector(".nav-icon-bar-bottom") ;
+
 hamburger.addEventListener("click" , e=>{
   dropdown.classList.toggle("dropdown-hidden") ;
+  navIconBarTop.classList.toggle("spin-top") ;
+  navIconBarBottom.classList.toggle("spin-bottom") ;
 })
 
 // Custom cursor
