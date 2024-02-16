@@ -19,9 +19,20 @@
     rel="stylesheet"
 />
 
+    <!-- swiper js -->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="hide-body">
+
+    <div class="custom-cursor">
+      <span><i class="ri-arrow-left-s-line"></i></span>
+      <span><i class="ri-arrow-right-s-line"></i></span>
+    </div>
 
     <div id="page-cover">
       <p class="page-cover-text"></p>
@@ -37,14 +48,23 @@
             <li><a href="#" class="nav-link">Work</a></li>
             <li><a href="#" class="nav-link">Studio</a></li>
             <li><a href="#" class="nav-link">Contact</a></li>
-            <li>
+            <li >
               <a href="#" class="nav-link" id="nav-hamburger">
                 <div class="nav-icon">
-                  <span></span>
-                  <span></span>
+                  <span class="nav-icon-bar-top"></span>
+                  <span class="nav-icon-bar-bottom"></span>
                 </div>
                 Menu</a
               >
+              <div class="dropdown dropdown-hidden">
+                <div class="dropdown-backdrop"></div>
+              <ul class="dropdown-menu">
+                <li><a href="#" class="dropdown-link">Work</a></li>
+                <li><a href="#" class="dropdown-link">Studio</a></li>
+                <li><a href="#" class="dropdown-link">Contact</a></li>
+              </ul>
+              </div>
+              
             </li>
           </ul>
         </nav>
@@ -286,7 +306,108 @@
       </section>
 
      
-      
+      <section class="swiper-section">
+
+        <div class="featured-header swiper-header">
+          <div class="red-dot"></div>
+          <h2 class="featured-heading">Who we work with</h2>
+        </div>
+
+        <div class="swiper-container">
+           <!-- Swiper -->
+           <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" >
+                <div class="swiper-img-wrapper">
+                  <img src="./images/slider-1.svg" alt="" draggable="false">
+                </div>
+                <p class="swiper-text">
+                  Retained Production support across
+                  retail and events in NY, CHI, LA. Creative
+                  Design, Design Management,
+                  Production/Project Management, and
+                  execution of work from concept to
+                  installation across the Country.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="swiper-img-wrapper">
+                  <img src="./images/slider-2.svg" alt="" draggable="false">
+                </div>
+                <p class="swiper-text">
+                  Creative Concepting, Design, Design
+Management, Project Management, and
+execution of work from concept to
+installation across the Country. Cross
+functional communication and
+management of third party partners.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="swiper-img-wrapper">
+                  <img src="./images/slider-3.svg" alt="" draggable="false">
+                </div>
+                <p class="swiper-text">
+                  Production and design along with install
+                  oversight and execution support for the
+                  SoHo store opening on Broadway St,
+                  New York. Also working on creative and
+                  production work for a new store opening
+                  in Glendale, California.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="swiper-img-wrapper">
+                  <img src="./images/slider-4.svg" alt="" draggable="false">
+                </div>
+                <p class="swiper-text">
+                  Design and Production partner for
+Hunter Holiday 2022 Pop-in at
+Nordstrom 57th St, New York, including
+activations in Women's, Men's and Kid's
+zones. Thirty-five (35) additional smaller
+take-downs in Nordstrom stores across
+the US. Concept design for Holiday boot
+customization events in stores across
+winter 2022.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="swiper-img-wrapper">
+                  <img src="./images/slider-5.svg" alt="" draggable="false">
+                </div>
+                <p class="swiper-text">
+                  Creative, Design, and Production
+Partner for 2023 CES. Scope Included
+creation of Branding Identity, Assets,
+and Digital Content, Design, Production
+design, Production oversight and
+Installation of client activations for IBM,
+Delta, Instacart, and more.
+                </p>
+              </div>
+              <div class="swiper-slide">
+                <div class="swiper-img-wrapper">
+                  <img src="./images/slider-6.svg" alt="" draggable="false">
+                </div>
+                <p class="swiper-text">
+                  Creative, Design, and Production
+                  Partner for 2022 NY Fashion Week Pop-
+                  Up space. In Partnership with B-Reel
+                  scope including creation of Final Design,
+                  Design Assets, 3D Renders, Production
+                  design, Production/Partner oversight
+                  and creation of a two (2) story pop-up for
+                  Afterpay's clients such as Crocs, JD
+                  Sports, Container Store, & Revolve.
+                </p>
+              </div>
+
+            </div>
+           
+          </div>
+        </div>
+      </section>
 
     </div>
 
@@ -331,6 +452,57 @@
       
     </footer>
 
+
+    <!-- swiper js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+      <!-- Initialize Swiper -->
+  <script>
+
+
+    var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3.5,
+          spaceBetween: 80,
+          freeMode: true,
+        
+        });
+    
+    let swiperScreenSizeLg = window.matchMedia("(max-width : 992px)") ;
+    let swiperScreenSizeMd = window.matchMedia("(max-width : 800px)") ;
+    let swiperScreenSizeSm = window.matchMedia("(max-width : 480px)") ;
+
+
+        swiperScreenSizeLg.addEventListener("change" , ()=>{
+          if(swiperScreenSizeLg.matches){
+      var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 2.75,
+          spaceBetween: 60,
+          freeMode: true,
+        
+        });
+    }
+
+    if(swiperScreenSizeMd.matches){
+      var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 2.25,
+          spaceBetween: 50,
+          freeMode: true,
+        
+        });
+    }
+    
+    if(swiperScreenSizeSm.matches){
+      var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 1.5,
+          spaceBetween: 30,
+          freeMode: true,
+        
+        });
+    }
+
+        })
+
+  </script>
 
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="js/app.js"></script>

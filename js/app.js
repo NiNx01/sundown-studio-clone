@@ -3,6 +3,37 @@
 //     smooth: true
 // });
 
+// NAV Dropdown
+const hamburger = document.querySelector("#nav-hamburger") ;
+const dropdown = document.querySelector(".dropdown") ;
+
+hamburger.addEventListener("click" , e=>{
+  dropdown.classList.toggle("dropdown-hidden") ;
+})
+
+// Custom cursor
+const cursor = document.querySelector(".custom-cursor") ;
+window.addEventListener("mousemove" , (e)=>{
+ let {clientX , clientY} = e ;
+
+ cursor.animate({
+  top : `${clientY}px`,
+  left : `${clientX}px`
+}, { duration : 350 , fill : "forwards"})
+ 
+})
+
+const swiperContainer = document.querySelector(".swiper-container") ;
+
+swiperContainer.addEventListener("mouseenter" , (e)=>{
+  cursor.classList.add("show-cursor") ;
+})
+
+swiperContainer.addEventListener("mouseleave" , (e)=>{
+  cursor.classList.remove("show-cursor") ;
+})
+
+
 // This is to avoid refreshing
 const aTags = document.querySelectorAll("a") ;
 aTags.forEach(aTag => {
