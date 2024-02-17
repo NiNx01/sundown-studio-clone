@@ -3,6 +3,8 @@
 //     smooth: true
 // });
 
+const pageBody = document.querySelector("body" ) ;
+
 // NAV Dropdown
 const hamburger = document.querySelector("#nav-hamburger") ;
 const dropdown = document.querySelector(".dropdown") ;
@@ -14,6 +16,15 @@ hamburger.addEventListener("click" , e=>{
   dropdown.classList.toggle("dropdown-hidden") ;
   navIconBarTop.classList.toggle("spin-top") ;
   navIconBarBottom.classList.toggle("spin-bottom") ;
+  
+  if(dropdown.classList.contains("dropdown-hidden")){
+    setTimeout(() => {
+      pageBody.classList.toggle("hide-body") ;
+    }, 400);
+  }else {
+    pageBody.classList.toggle("hide-body") ;
+  }
+
 })
 
 // Custom cursor
@@ -142,7 +153,7 @@ servicesLinks.forEach(serviceLink => {
 const pageCover = document.querySelector("#page-cover") ;
 const pageCoverText = document.querySelector(".page-cover-text") ;
 
-const pageBody = document.querySelector("body" ) ;
+
 
 const changeTextTimeout = (text)=>{
   return new Promise((resolve,reject) => {

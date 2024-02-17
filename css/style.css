@@ -1053,6 +1053,9 @@ footer {
 
 .dropdown {
   display: none;
+  will-change: transform;
+  scrollbar-gutter: stable both-edges;
+  /* border: 2px solid blue; */
 }
 
 
@@ -1064,7 +1067,8 @@ footer {
   border-bottom-right-radius: 1.875em;
   border-bottom-left-radius: 1.875em;
   background-color: #efeae3;
-  position: absolute;
+  position: fixed;
+
   left: 0;
   right: 0;
   top: 0;
@@ -1072,11 +1076,13 @@ footer {
 }
 
 .dropdown-backdrop{
-  left: 0;
+  /* left: 0;
   position: absolute;
   width: 100vw;
   top: 0;
-  height: 100vh;
+  height: 100vh; */
+  position: fixed;
+  inset: 0;
   z-index: 90;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -1287,8 +1293,8 @@ footer {
     display: block;
     position: absolute;
     inset: 0;
-    border: 2px solid red;
-    transition: transform 240ms ease-in-out;
+    /* border: 2px solid red; */
+    transition: transform 400ms ease-in-out;
   }
 
   .dropdown-hidden{
